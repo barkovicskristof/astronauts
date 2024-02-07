@@ -10,11 +10,13 @@ def adatok_beolvasasa(fajl_nev):
                 szuletesi_honapok.append(szuletesi_honap)
     return szuletesi_honapok
 
+
 def honapok_szamlalasa(szuletesi_honapok):
     honap_szamlalo = {}
     for honap in szuletesi_honapok:
         honap_szamlalo[honap] = honap_szamlalo.get(honap, 0) + 1
     return honap_szamlalo
+
 
 def main():
     fajl_nev = 'astronauts.csv'
@@ -25,7 +27,7 @@ def main():
     osszes_ureszkoz = sum(honap_szamlalo.values())
     for honap, szam in leggyakoribb_harom:
         szazalek = (szam / osszes_ureszkoz) * 100
-        print(f"{honap}: {szazalek:.1f}%")
+        print(f"{honap}. hónap : {szazalek:.1f}%")
 
 
 main()
